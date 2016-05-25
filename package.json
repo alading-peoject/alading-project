@@ -1,0 +1,28 @@
+{
+  "name": "centerStoreMeizu",
+  "version": "1.0.1",
+  "description": "基于fis3的前端架构",
+  "main": "fis-conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "fis-parser-stylus2": "^1.0.2",
+    "fis-preprocessor-replacer": "^1.0.0",
+    "fis3-postpackager-loader":"^1.2.2",
+    "fis3-hook-commonjs":"^0.1.5"
+  },
+  "scripts": {
+    "test": "meizu"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "center",
+    "meizuCenter"
+  ],
+  "author": "chenying",
+  "license": "ISC"
+}
