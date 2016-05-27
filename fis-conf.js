@@ -6,8 +6,7 @@ fis.set('namespace', 'alading');
 
 fis.hook('commonjs');
 fis
-    .match('/app/view/(*.html)', {
-        standard: false,
+    .match('/app/view/pages/(*.html)', {
         release: '${namespace}/$1'
     })
     .match('/app/(style/**.*)', {
