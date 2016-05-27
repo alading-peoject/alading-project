@@ -1,62 +1,89 @@
-//--------------------------------------------------------【字体图标模块】
-@font-face {font-family: "iconfont";
-  src: url('iconfont/iconfont.eot'); /* IE9*/
-  src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */url('iconfont/iconfont.woff') format('woff'), /* chrome, firefox */url('iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/url('iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+@import 'qst/all'
+
+//基础字号
+$base-text-font = $rem(20px)
+
+//深色背景上字体的颜色
+$dark-text-color = #ffb938
+
+//浅色背景上字体颜色
+$under-text-color = #d89334
+
+//通用字体颜色
+$common-text-color =#2b2b2b
+
+//字体颜色---白色
+$whit-text-color = #fff
+
+//渐变背景色
+$liner-background-color =@block{
+  background -webkit-linear-gradient(0, #fdb752, #c77d20)
+  background linear-gradient(0, #fdb752, #c77d20)
+  color $whit-text-color
+  font-size $rem(30px)
+  height $rem(70px)
+  line-height @height
 }
 
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
+//购物车内页商品名字大小和颜色
+$buyCard-text-font =@block{
+  font-size $rem(20px)
+  color $common-text-color
 }
-.icon-iconfontcanyinmeishi:before { content: "\e600"; }
-.icon-iconfontchanpin:before { content: "\e601"; }
-.icon-iconfonticonfont:before { content: "\e602"; }
-.icon-iconfonticonfontshujuxian:before { content: "\e603"; }
-.icon-iconfontjingxuan1:before { content: "\e604"; }
-.icon-iconfontjingxuan:before { content: "\e605"; }
-.icon-iconfontjingyingjiaoliu:before { content: "\e606"; }
-.icon-iconfontremen:before { content: "\e607"; }
-.icon-iconfontshenghuo:before { content: "\e608"; }
-.icon-iconfontshouye:before { content: "\e609"; }
-.icon-iconfonttubiaozuixin01:before { content: "\e60a"; }
-.icon-iconfonttutechan:before { content: "\e60b"; }
-.icon-iconfontwodezhongchou:before { content: "\e60c"; }
-.icon-iconfontwoxiao:before { content: "\e60d"; }
-.icon-iconfontxiangmuguanli:before { content: "\e60e"; }
-.icon-iconfontxuelijiaoyu:before { content: "\e60f"; }
-.icon-iconfontyidonghulian:before { content: "\e610"; }
-.icon-iconfonttehuijingxuan:before { content: "\e611"; }
-.icon-iconfontxingxing:before { content: "\e612"; }
-.icon-iconfontzhaoshangjiameng:before { content: "\e613"; }
-.icon-iconfonthuangguan:before { content: "\e614"; }
 
-//--------------------------------------------------------【工具代码块】
+//除首页详情页外，价格字体大小和颜色
+$except-two-text-font =@block{
+  font-size $rem(24px)
+  color $under-text-color
+}
+
+//数量字体大小和颜色
+$amount-text-font =@block{
+  font-size $rem(20px)
+  color $common-text-color
+}
+
+//菜单主按钮
+$btn-style =@block{
+  font-size $rem(20px)
+  color $common-text-color
+}
+
+//置顶
+$public-center-vertical =@block{
+  position absolute
+  top 0
+  left @top
+}
+
+//置底
+$public-center-vertical =@block{
+  position absolute
+  bottom 0
+  left @bottom
+}
 
 //垂直居中
 $public-center-vertical =@block{
-  position: absolute
-  top: 50%
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  position absolute
+  top 50%
+  -webkit-transform translateY(-50%)
+  transform translateY(-50%)
 }
 
 //水平居中
 $public-center-horizontally =@block{
-  position: absolute
-  left: 50%
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  position absolute
+  left 50%
+  -webkit-transform translateX(-50%)
+  transform translateX(-50%)
 }
 
 //水平垂直居中
 $public-center-completely =@block{
-  position: absolute
-  left: 50%
-  top: 50%
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position absolute
+  left 50%
+  top 50%
+  -webkit-transform translate(-50%, -50%)
+  transform translate(-50%, -50%)
 }

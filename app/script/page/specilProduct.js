@@ -1,4 +1,4 @@
-var $ = require('../module/jquery.js');
+var $ = require('../jquery.js');
 
 $('.item').click(function(){
   $('.item').removeClass('active');

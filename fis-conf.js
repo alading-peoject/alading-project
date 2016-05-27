@@ -2,7 +2,7 @@ fis.set('project.ignore', ['libs/**', 'node_modules/**', 'fis-conf.js', 'test/**
 
 fis.set('new date', Date.now());
 
-fis.set('namespace', 'xmb');
+fis.set('namespace', 'alading');
 
 fis.hook('commonjs');
 fis
@@ -23,6 +23,11 @@ fis
     })
 
     .match('/app/script/{module,page}/(**.js)', {
+      isMod: true,
+      moduleId: '$1'
+    })
+
+    .match('/app/script/jquery.js', {
       isMod: true,
       moduleId: '$1'
     })

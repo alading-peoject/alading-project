@@ -1,4 +1,4 @@
-var $ = require('../module/jquery.js'),
+var $ = require('../jquery.js'),
     Slider = require('../module/slider.js');
 
 var imgList = [
