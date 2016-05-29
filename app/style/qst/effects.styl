@@ -80,3 +80,13 @@ $blurry-text(color, radius= 0.15em) {
     // 0.1px of spread distance made the shadow visible under IE10
     text-shadow: 0 0 radius 0.1px color;
 }
+$background-gradient(start-color,end-color,start-pos=0 0,end-pos=0 bottom){
+  background-image: -webkit-gradient(linear,start-pos,end-pos,from(start-color), to(end-color));
+}
+//文本渐变
+
+$text-gradient(start-color,end-color,start-pos=0 0,end-pos=0 bottom){
+  background-image: -webkit-gradient(linear,start-pos,end-pos,from(start-color), to(end-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

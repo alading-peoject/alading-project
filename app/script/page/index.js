@@ -5,17 +5,17 @@ var imgList = [
  {
      height: 254,
      width: 640,
-     content: 'image/banner.jpg',
+     content: '/alading/image/index/index-banner-01.png',
      href:'#'
  }, {
         height: 254,
         width: 640,
-        content: 'image/banner.jpg',
+        content: '/alading/image/index/index-banner-01.png',
         href:'#'
     }, {
         height: 254,
         width: 640,
-        content: 'image/banner.jpg',
+        content: '/alading/image/index/index-banner-01.png',
         href:'#'
     }
  ];
