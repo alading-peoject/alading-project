@@ -102,6 +102,7 @@ $font-size-30 = $rem(30px)
 $font-size-36 = $rem(20px)
 $font-size-18 = $rem(18px)
 $font-size-36 = $rem(36px)
+$font-size-14 = $rem(14px)
 
 $image-correct = "../image/buyresult/buy-result_01.png"
 $image-sprite = "../image/common/sprite_01.png"
@@ -136,7 +137,18 @@ setFontSize(size){
 
 $header-height = $rem(70px)
 .margin-left-right-default{
-  margin 0 $rem(28px)
+  padding 0 $rem(28px)
+}
+//总的布局
+summarize(length=90%){
+  lafe-intro-item(length)
+  display flex
+  flex-direction column
+  height 100%
+  .content{
+    flex 2
+    overflow-y auto
+  } 
 }
 
 /*********自定义的可重用界面组件************/
@@ -371,7 +383,7 @@ addNavigator(){
     li{
       flex 1
       text-align center
-      color #e38f03
+      color #6b6b6b
       //$text-gradient($light-yellow-color,$dark-yellow-color)
       setFontSize($font-size-20)
 
@@ -379,7 +391,49 @@ addNavigator(){
       border-right $rem(1px) solid $grey-background-color
     }
     .active{
-      border-bottom $rem(4px) solid #e38f03
+      border-bottom $rem(4px) solid #fff
+    }
+  }
+}
+addBottomNavigator(){
+  .navigator{
+    display flex
+    border-top $rem(1px) solid $grey-background-color
+    height $rem(74)
+    li{
+      flex 1
+      text-align center
+      //$text-gradient($light-yellow-color,$dark-yellow-color)
+      setFontSize($font-size-14)
+      border-right $rem(1px) solid $grey-background-color
+      display flex
+      flex-direction column 
+      em,strong{
+        display block
+        align-items center
+        justify-content center
+        display flex 
+      }
+      em{
+        flex 2
+        height $rem(50px)
+        color #f4ac3a
+        setFontSize($font-size-30)
+        align-items flex-end
+      }
+      strong{
+        height $rem(24px)
+        flex 1
+        color #6b6b6b
+        font-weight normal
+        align-items flex-start
+      }
+    }
+    .active{
+      background-color #f4ac3a
+      em,strong{
+        color $white-color
+      }
     }
   }
 }
@@ -393,7 +447,7 @@ addNavigator(){
     margin-top $rem(105px)
     text-align center
   }
-  
+  summarize()
   .message{
     margin-top $rem(30px)
     text-align center
@@ -424,6 +478,7 @@ addNavigator(){
 }
 
 .news{
+  summarize()
   .content{
     @extend .margin-left-right-default
   }
@@ -454,8 +509,7 @@ addNavigator(){
 .my-favorite{
   width 100%
   height @width
-  overflow-y scroll
-  lafe-intro-item(90%)
+  summarize()
   .list{
     margin-top $rem(30px)
     @extend .margin-left-right-default
@@ -467,7 +521,7 @@ addNavigator(){
 }
 
 .buy-card{
-  lafe-intro-item(90%)
+  summarize()
   .list{
     margin-top $rem(30px)
     @extend .margin-left-right-default
@@ -491,9 +545,29 @@ addNavigator(){
     .left{
       display flex
       align-items center
+      width 10%
+      justify-content center
       //$text-gradient($light-yellow-color,$dark-yellow-color)
     }
     .left label{
+      vertical-align middle
+    }
+    .main{
+      display flex
+      justify-content space-between
+      flex 2
+    }
+    .main label:before{
+      background-image url($image-sprite)
+      background-position $rem(0px 0px)
+      background-repeat no-repeat 
+      background-size $rem(150px 129px)
+      display inline-block
+      width $rem(20px)
+      height $rem(30px)
+      line-height @height
+      content " "
+      margin-right $rem(5px)
       vertical-align middle
     }
     .right{
@@ -597,7 +671,10 @@ addNavigator(){
 }
 .my-order{
   addNavigator()
-  lafe-intro-item(100%)
+  summarize(100%)
+  .footer{
+    addBottomNavigator()
+  }
   .cont{
     margin-top $rem(20px)
     position relative
@@ -868,11 +945,13 @@ radioInput()
   left $rem(0px)
   top $rem(0px)
   height 100%
-  overflow-y scroll
+  summarize()
+  .content{
+    overflow-y hidden
+  } 
   .item:last-child{
     margin-bottom $rem(120px) !important
   }
-  summarize()
   addSearchBox()
   .content{
     display flex
@@ -882,6 +961,9 @@ radioInput()
     right $rem(10px)
     top 50%
     margin-top $rem(-21px)
+  }
+  .footer{
+    addBottomNavigator()
   }
   .menu{
     width 26%
@@ -928,7 +1010,7 @@ radioInput()
   }
   .main{
     width 74%
-    margin $rem(0 15px)
+    padding $rem(0 15px)
     overflow-y auto
   }
   .item{
@@ -1842,5 +1924,143 @@ radioInput()
         background-size $rem(31px 30px)
       }
     }
+  }
+}
+
+.buy-card-special{ 
+  summarize()
+  .top{
+    height $rem(57px)
+    border-bottom $rem(1px) solid #dcdcdc
+    display flex
+    padding $rem(0 0 0 20px)
+    .left{
+      flex 2
+      display flex
+      justify-content space-between
+      align-items center
+    }
+    .right{
+      width $rem(57px)
+      height 100%
+      background-color #dcdcdc
+      color $white-color
+      display flex
+      justify-content center
+      align-items center
+    }
+    .sub-left{
+      display flex
+      align-items center
+    }
+    .sub-right{
+      width $rem(57px)
+      height @width
+      background-repeat no-repeat
+      background-image url("../image/buycardspecial/special_03.jpg")
+      background-position left center
+    }
+    .shape{
+      width $rem(36px)
+      height $rem(36px)
+      border-radius $rem(18px)
+      background-color #e8e8e8
+      display inline-block
+      margin-right $rem(10px)
+    }
+    
+  }
+  .content{
+    padding $rem(28px)
+    background-color #ebebeb
+  }
+  lafe-intro-item(100%)
+  .item{
+    border $rem(1px) solid #dedede
+    .send-button{
+      border-radius $rem(20px)
+      padding $rem(0px 20px)
+      $background-gradient($light-yellow-color,$dark-yellow-color)
+      color $white-color
+    }
+    border-radius $rem(5px)
+  }
+  .bottom{
+    background-color $white-color
+    border-top $rem(1px) solid $grey-background-color
+    height $rem(74px)
+    line-height @height
+    display flex
+    align-items center
+    .expression,.more{
+      width $rem(50px)
+      height $rem(50px)
+      display inline-block
+      margin-right $rem(10px)
+      background-repeat no-repeat
+      background-position left top
+    }  
+    .expression{
+      background-image url("../image/buycardspecial/special_07.jpg")
+      margin-left $rem(10px)
+    }
+    .more{
+      background-image url("../image/buycardspecial/special_09.jpg")
+    }
+    .enter-box{
+      flex 2
+      height $rem(42px)
+      line-height @height
+      border $rem(1px) solid $grey-background-color
+      border-radius $rem(5px)
+      margin-right $rem(20px)
+    }
+    .send{
+      display inline-block
+      width $rem(84px)
+      height $rem(42px)
+      line-height @height
+      color $white-color
+      text-align center
+      border-radius 20px
+      $background-gradient($light-yellow-color,$dark-yellow-color)
+    }
+  }
+}
+
+.buy-card-edit{
+  @extend .buy-card
+  .number{
+    label{
+      display inline-block
+      setFontSize(font-size-18)
+    }
+  }
+  .input-item{
+    .add-button,.delete-button{
+      width $rem(28px)
+      height $rem(28px)
+      line-height @height
+      display inline-block
+      background-color #d6d6d6
+      color #000
+      text-align center
+    }
+    input{
+      width $rem(94px)
+      height $rem(28px)
+      line-height @height
+      text-align center
+      border none
+      background-color $white-color
+      setFontSize(font-size-16)
+      text-indent $rem(20px)
+    }
+  }
+  .middle{
+    display flex
+    justify-content center
+    align-items center
+    border-right $rem(1px) solid $white-color
   }
 }
