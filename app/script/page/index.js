@@ -1,24 +1,6 @@
 var $ = require('../jquery.js'),
     Slider = require('../module/slider.js');
 
-var imgList = [
- {
-     height: 254,
-     width: 640,
-     content: '/alading/image/index/index-banner-01.png',
-     href:'#'
- }, {
-        height: 254,
-        width: 640,
-        content: '/alading/image/index/index-banner-01.png',
-        href:'#'
-    }, {
-        height: 254,
-        width: 640,
-        content: '/alading/image/index/index-banner-01.png',
-        href:'#'
-    }
- ];
 var slide = new Slider({
     dom: document.getElementById('slide'),
     data: imgList,
