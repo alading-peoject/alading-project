@@ -310,6 +310,7 @@ addFooter(){
     position absolute
     left 0
     bottom 0
+    z-index 999999
     .left{
       padding $rem(30px)
       width 64%
@@ -447,12 +448,18 @@ addNavigator(){
 }
 
 .my-favorite{
+  width 100%
+  height @width
+  overflow-y scroll
   lafe-intro-item(90%)
   .list{
     margin-top $rem(30px)
     @extend .margin-left-right-default
   }
   addFooter()
+  .item:last-child{
+    margin-bottom $rem(120px)
+  }
 }
 
 .buy-card{
@@ -856,6 +863,11 @@ radioInput()
   position relative
   left $rem(0px)
   top $rem(0px)
+  height 100%
+  overflow-y scroll
+  .item:last-child{
+    margin-bottom $rem(120px) !important
+  }
   summarize()
   addSearchBox()
   .content{
@@ -1312,14 +1324,17 @@ radioInput()
     width 100% !important
     margin-left 2% !important
   }
-  .left,.main{
-    background none !important
-  }
-  .left{
-    input{
-      margin-left 3% !important
+  .content{
+    .left,.main{
+      background none !important
+    }
+    .left{
+      input{
+        margin-left 3% !important
+      }
     }
   }
+  
   .main{
     display block !important
   }
@@ -1430,13 +1445,355 @@ radioInput()
   }
 }
 
-.my-order-02{
+.my-order-01{
   width 100%
+  height 100%
+  overflow-x hidden
+  overflow-y scroll
   hr{
     width 92%
-    margin $rem(20px) auto !important
+    margin $rem(20px) auto 0 !important
     height:1px;
     border:none;
     border-top:1px solid #e8e8e8;
+  }
+  .content{
+    width 92%
+    margin 0 auto
+    .shop-list{
+      border 1px solid #e8e8e8;
+      border-radius $border-radius-big
+      margin $rem(20px) auto
+      &:last-child{
+        margin-bottom $rem(120px)
+      }
+      .title{
+        width 92%
+        margin 0 auto
+        display flex
+        flex-direction row
+        justify-content space-between
+        flex-wrap nowrap
+        padding $rem(15px 0)
+        border-bottom 1px solid #e8e8e8;
+        font-size $rem(18px)
+        .name{
+          color #e38f03
+          img{
+            width $rem(24px)
+            height $rem(23px)
+          }
+        }
+        .status{
+          margin-right 5%
+          color #7f7f7f
+        }
+      }
+      .order{
+        width 92%
+        margin $rem(20px) auto
+        padding $rem(10px 0)
+        background #f5f5f5
+        .describ{
+          width 70%
+          float right
+          margin 0 2% 0 0
+          .top{
+            //margin-top $rem(20px)
+            display flex
+            flex-direction row
+            flex-wrap nowrap
+          }
+          .top{
+            justify-content space-around
+            .text{
+              font-size $rem(18px) !important
+            }
+          }
+          .bottom{
+            justify-content flex-start
+            position relative
+            span{
+              font-size $rem(14px)
+              color $common-text-color
+              display block
+              padding-top $rem(20px)
+            }
+            a{
+              position absolute
+              top $rem(15px)
+              @extend .btn-width-radius
+              setFontSize($font-size-24)
+              font-weight normal
+              margin-left $rem(10px)
+              &.service{
+                right 40%
+              }
+              &.again{
+                right 0
+              }
+            }
+          }
+        }
+        .img-a{
+          width 25%
+          float left
+        }
+        img{
+          width 90%
+          display block
+          margin $rem(10px 10px)
+        }
+      }
+      .total{
+        margin $rem(20px)
+        text-align right
+        p{
+          font-size $rem(24px)
+          &:first-child{
+            border-bottom 1px solid #e8e8e8;
+            padding-bottom $rem(10px)
+            margin-bottom $rem(10px)
+          }
+          &:last-child{
+            color #d89334
+          }
+        }
+      }
+    }
+  }
+}
+
+.center-index{
+  width 100%
+  height 100%
+  overflow-y scroll
+  .navigator li{
+    color #717171
+    padding 0 !important
+    margin $rem(15px 0)
+    &:last-child{
+      border 0
+    }
+  }
+  .navigator{
+    width 92%
+    margin 0 auto
+  }
+  .banner{
+    width 100%
+    img{
+      width 100%
+    }    
+  }
+  .person{
+    position absolute
+    top $rem(125px)
+    width 100%
+    span{
+      font-size $rem(36px)
+      color #e38f03
+      display block
+      text-align center
+      margin-top $rem(5px)
+    }
+    img{
+      width 25% !important
+      display block
+      margin 0 auto
+    }
+  }
+  .title{
+    margin $rem(30px) 4% $rem(10px)
+    display flex
+    flex-direction row
+    justify-content space-between
+    flex-wrap nowrap
+    img{
+      width $rem(40px)
+      height $rem(50px)
+    }
+    span{
+      display inline-block
+      margin-top $rem(10px)
+      color $common-text-color
+    }
+    a{
+      margin-top $rem(10px)
+    }
+  }
+  hr{
+    border-color #eee !important
+    &.last{
+      margin-bottom $rem(150px) !important
+    }
+  }
+  .galery{
+    display flex
+    flex-direction row
+    justify-content space-around
+    flex-wrap nowrap
+    margin-top $rem(20px)
+    a{
+      display block
+      height $rem(40px)
+      padding-top $rem(100px)
+      &:first-child{
+        background url('../image/center/lamp.png') no-repeat center $rem(20px)
+        background-size $rem(35px 60px)
+      }
+      &:nth-child(2){
+        background url('../image/center/star1.png') no-repeat center $rem(20px)
+        background-size $rem(54px 53px)
+      }
+      &:nth-child(3){
+        background url('../image/center/location.png') no-repeat center $rem(20px)
+        background-size $rem(37px 57px)
+      }
+    }
+  }
+}
+
+.order-detail{
+  height 100%
+  overflow-y scroll
+  overflow-x hidden
+  .info{
+    color #7f7f7f 
+    padding $rem(20px) 4% 0
+    .title{
+      border-bottom $rem(1px) solid #e8e8e8
+      padding-bottom $rem(10px)
+      display flex
+      flex-direction row
+      justify-content space-between
+      flex-wrap nowrap
+      span{
+        &:first-child{
+          color $common-text-color
+          font-size $rem(24px)
+        }
+        &:last-child{
+          font-size $rem(18px)
+        }
+      }
+    }
+    .connect,.address{
+      font-size $common-text-color
+      border-bottom $rem(1px) solid #e8e8e8
+      padding-bottom $rem(10px)
+      margin $rem(10px 0)
+      line-height $rem(34px)
+    }
+    .address{
+      margin 0 !important
+    }
+  }
+  .total{
+    margin-bottom $rem(120px) !important
+    p{
+      display flex
+      flex-direction row
+      justify-content space-between
+      flex-wrap nowrap
+      img{
+        width $rem(31px)
+        height $rem(30px)
+        margin-right $rem(10px)
+      }
+      span{
+        &:first-child{
+          font-size $rem(20px)
+        }
+        &:last-child{
+          font-size $rem(18px)
+        }
+      }
+    }
+  }
+}
+
+.total-nav{
+  background #f5f5f5
+  position absolute
+  bottom 0
+  left 0
+  width 100%
+  border-top $rem(1px) solid #eee
+  ul{
+    display flex
+    flex-direction row
+    justify-content space-around
+    flex-wrap nowrap
+    li{
+      width 25%
+      border-right $rem(1px) solid #eee
+      a{
+        height $rem(26px)
+        text-align center
+        display block
+        padding-top $rem(50px)
+        font-size $rem(14px)
+      }
+      &:first-child{
+        a{
+          background url('../image/common/home2.png') no-repeat center $rem(10px)
+          background-size $rem(30px 30px)
+        }      
+      }
+      &:first-child.active{
+        a{
+          background url('../image/common/home3.png') no-repeat center $rem(10px)
+          background-size $rem(30px 30px)
+        }      
+      }
+      &:nth-child(2){
+        a{
+          background url('../image/common/thumbnails1.png') no-repeat center $rem(10px)
+          background-size $rem(29px 29px)
+        }      
+      }
+      &:nth-child(2).active{
+        a{
+          background url('../image/common/thumbnails2.png') no-repeat center $rem(10px)
+          background-size $rem(29px 29px)
+        }      
+      }
+      &:nth-child(3){
+        a{
+          background url('../image/common/cart.png') no-repeat center $rem(10px)
+          background-size $rem(33px 33px)
+        }      
+      }
+      &:nth-child(3).active{
+        a{
+          background url('../image/common/cart2.png') no-repeat center $rem(10px)
+          background-size $rem(33px 33px)
+        }      
+      }
+      &:nth-child(4){
+        a{
+          background url('../image/common/user2.png') no-repeat center $rem(10px)
+          background-size $rem(20px 28px)
+        }
+        border 0
+      }
+      &:nth-child(4).active{
+        a{
+          background url('../image/common/user.png') no-repeat center $rem(10px)
+          background-size $rem(20px 28px)
+        }
+      }
+    }
+  }
+  .active{
+    @extend .liner-background-color
+    color #fff
+    height $rem(80px)
+    line-height @height !important
+    a{
+      padding $rem(20px)
+      color #fff
+    }
   }
 }
