@@ -1,7 +1,7 @@
 .liner-background-color {
   display: inline-block;
-  background: -webkit-linear-gradient(0, #fdb752, #c77d20);
-  background: linear-gradient(0, #fdb752, #c77d20);
+  background: -webkit-linear-gradient(0, #c77d20, #fdb752);
+  background: linear-gradient(0, #c77d20, #fdb752);
   color: #fff;
   font-size: 1.5rem;
   height: 3.5rem;
