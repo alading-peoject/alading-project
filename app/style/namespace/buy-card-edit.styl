@@ -1,0 +1,36 @@
+.buy-card-edit{
+  @extend .buy-card
+  .number{
+    label{
+      display inline-block
+      setFontSize(font-size-18)
+    }
+  }
+  .input-item{
+    .add-button,.delete-button{
+      width $rem(28px)
+      height $rem(28px)
+      line-height @height
+      display inline-block
+      background-color #d6d6d6
+      color #000
+      text-align center
+    }
+    input{
+      width $rem(94px)
+      height $rem(28px)
+      line-height @height
+      text-align center
+      border none
+      background-color $white-color
+      setFontSize(font-size-16)
+      text-indent $rem(20px)
+    }
+  }
+  .middle{
+    display flex
+    justify-content center
+    align-items center
+    border-right $rem(1px) solid $white-color
+  }
+}

@@ -1,0 +1,273 @@
+/*********自定义的可重用界面组件************/
+.header{
+  height $header-height
+  line-height $header-height
+  background-color $black-background-color
+  border-top $brown-border
+  position relative
+  h1{
+    @extend .text-center
+    margin 0
+    setFontSize($font-size-30)
+    //$text-gradient($light-yellow-color,$dark-yellow-color)
+  }
+  .button{
+    //$text-gradient($light-yellow-color,$dark-yellow-color)
+    setFontSize($font-size-24)
+    position absolute
+    right $rem(20px)
+    top $rem(0px)
+  }
+}
+
+.flag-success{
+  width $rem(170px)
+  height $rem(170px)
+  background no-repeat 0 0
+  background-image $image-correct
+  background-size contain
+}
+
+.btn{
+  padding $rem(10px) $rem(20px)
+  color $white-color
+  border-radius $border-radius-default
+  display inline-block
+  $background-gradient($light-yellow-color,$dark-yellow-color)
+}
+.btn-width-radius{
+  padding $rem(5px) $rem(20px)
+  color $dark-yellow-color
+  border-radius $border-radius-big
+  display inline-block
+  border $rem(1px) solid $light-yellow-color
+  //$text-gradient($light-yellow-color,$dark-yellow-color)
+}
+
+setFontSize(size){
+  font-size size
+}
+
+radioInput(){
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: $rem(20px);
+    height: $rem(20px);
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    background: #fff;
+    border: $rem(1px) solid #eee;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top :0 
+    z-index: 1000;
+  }
+  .option-input.radio {
+    border-radius: 50%;
+  }
+  .option-input.radio::after {
+    border-radius: 50%;
+  }
+  .option-input:checked::before {
+    // width $rem(10px);
+    // height $rem(10px);
+    // border-radius: 50%;
+    // border $rem(1px) solid $grey-color
+    // background $dark-yellow-color
+    // position: absolute;
+    // left 50%
+    // top 50%
+    // margin-left: 0.1%;
+    // margin-top: -0.37rem;
+    // display: inline-block;
+    // content: '';
+  }
+}
+lafe-intro-item(isHaveSelect=100%){
+  .lafe-intro-item{
+    display flex
+    margin-bottom $rem(8px)
+    .left{
+      width 10%
+      background $grey-background-color
+      text-align center
+      line-height $rem(104px)
+      display flex
+      align-items center
+    }
+    .left input{
+      left 50%
+      margin-left $rem(-12px)
+    }
+    
+    .main{
+      width isHaveSelect
+      display flex
+      background $grey-background-color
+      padding $rem(10px)
+      .picture{
+        width 24%
+        justify-content center
+        align-items center
+        display flex
+        img{
+          width 100%
+        }
+      }
+      .note{
+        width 76%
+        display flex
+        flex-direction column
+        justify-content space-between
+        margin $rem(10px 25px)
+      }
+      .note h4{
+        margin $rem(0)
+        color $black-color
+        setFontSize($font-size-20)
+        
+      }
+      .cont{
+        display flex
+        justify-content space-between
+        align-items center
+      }
+      .cont em{
+        color $dark-yellow-color
+        setFontSize($font-size-24)
+        font-style normal
+      }
+      .cont .strong{
+        @extend .btn-width-radius
+        setFontSize($font-size-24)
+        font-weight normal
+      }
+      .cont strong{
+        font-weight normal
+      }
+    }
+  }
+}
+
+addFooter(){
+  .footer{
+    width 100%
+    height $rem(70px)
+    display flex
+    position absolute
+    left 0
+    bottom 0
+    .left{
+      padding $rem(30px)
+      width 64%
+      display flex
+      align-items center
+      background $grey-background-color
+    }
+    .left label{
+      margin-left 20px
+      setFontSize($font-size-20)
+      color $grey-color
+    }
+    .right{
+      width 36%
+      $background-gradient($light-yellow-color,$dark-yellow-color)
+      text-decoration none
+      color $white-color
+      setFontSize($font-size-30)
+      text-align center
+      justify-content center
+      align-items center
+      display flex
+    }
+  }
+}
+addSearchBox(){
+  .search-box{
+    height $rem(42px)
+    line-height $rem(42px)
+    input::-webkit-input-placeholder{
+      setFontSize($font-size-18)
+    }
+    .search{
+      width 100%
+      height 100%
+      line-height 100%
+      border none
+      border-radius $border-radius-big
+      setFontSize($font-size-24)
+      background-color #565656
+      text-indent $rem(26px)
+      padding 0
+      display block
+    }
+    .search-flag{
+
+    }
+  }
+}
+addNavigator(){
+  .navigator{
+    display flex
+    border-bottom $rem(1px) solid $grey-background-color
+    li{
+      flex 1
+      text-align center
+      color #e38f03
+      //$text-gradient($light-yellow-color,$dark-yellow-color)
+      setFontSize($font-size-20)
+
+      padding $rem(15px 0px)
+      border-right $rem(1px) solid $grey-background-color
+    }
+    .active{
+      border-bottom $rem(4px) solid #e38f03
+    }
+  }
+}
+.logo-search-bar{
+    position absolute
+    width 100%
+    background rgba(0,0,0,.6)
+    z-index 999
+    .logo{
+      display inline-block
+      padding $rem(25px 20px)
+      img{
+        width $rem(160px)
+        height $rem(36px)
+      }
+    }
+    .search{
+      display inline-block
+      input{
+        position absolute
+        right $rem(20px)
+        -webkit-transform translateY(-67%)
+        transform translateY(-67%)
+        outline none
+        border 0
+        background rgba(225,225,225,0.2) url('../image/index/index-serch.png') no-repeat 5% center
+        width 40%
+        height 55%
+        line-height @height
+        border-radius $rem(25px)
+        padding 0 10%
+        background-size $rem(30px 30px)
+        font-size $rem(24px)
+        color #fff
+      }
+      input::-webkit-input-placeholder {
+        color: #b5b5b5;
+      }
+      input::input-placeholder {
+        color: #b5b5b5;
+      }
+    }
+}

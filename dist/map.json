@@ -1,0 +1,109 @@
+{
+    "res": {
+        "alading:app/script/jquery.js": {
+            "uri": "/alading/script/jquery.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "alading:app/script/jquery"
+            }
+        },
+        "alading:app/script/mod.js": {
+            "uri": "/alading/script/mod.js",
+            "type": "js"
+        },
+        "alading:app/script/module/slider.js": {
+            "uri": "/alading/script/module/slider.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "slider.js"
+            }
+        },
+        "alading:app/script/page/demo.js": {
+            "uri": "/alading/script/page/demo.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "demo.js"
+            },
+            "deps": [
+                "alading:app/script/jquery.js",
+                "alading:app/script/module/slider.js"
+            ]
+        },
+        "alading:app/script/page/index.js": {
+            "uri": "/alading/script/page/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "index.js"
+            },
+            "deps": [
+                "alading:app/script/jquery.js",
+                "alading:app/script/module/slider.js"
+            ]
+        },
+        "alading:app/style/base.css": {
+            "uri": "/alading/style/base.css",
+            "type": "css"
+        },
+        "alading:app/style/config.css": {
+            "uri": "/alading/style/config.css",
+            "type": "css"
+        },
+        "alading:app/style/config.styl": {
+            "uri": "/alading/style/config.styl",
+            "type": "styl"
+        },
+        "alading:app/style/main.css": {
+            "uri": "/alading/style/main.css",
+            "type": "css"
+        },
+        "alading:app/style/main.styl": {
+            "uri": "/alading/style/main.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/adaptive.styl": {
+            "uri": "/alading/style/qst/adaptive.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/all.styl": {
+            "uri": "/alading/style/qst/all.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/compatibility.styl": {
+            "uri": "/alading/style/qst/compatibility.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/effects.styl": {
+            "uri": "/alading/style/qst/effects.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/normalize.styl": {
+            "uri": "/alading/style/qst/normalize.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/oocss.styl": {
+            "uri": "/alading/style/qst/oocss.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/reset.styl": {
+            "uri": "/alading/style/qst/reset.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/shapes.styl": {
+            "uri": "/alading/style/qst/shapes.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/typography.styl": {
+            "uri": "/alading/style/qst/typography.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/util.styl": {
+            "uri": "/alading/style/qst/util.styl",
+            "type": "styl"
+        },
+        "alading:app/style/qst/variables.styl": {
+            "uri": "/alading/style/qst/variables.styl",
+            "type": "styl"
+        }
+    },
+    "pkg": {}
+}

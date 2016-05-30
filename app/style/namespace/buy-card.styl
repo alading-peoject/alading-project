@@ -1,0 +1,71 @@
+.buy-card{
+  summarize()
+  .list{
+    margin-top $rem(30px)
+    @extend .margin-left-right-default
+  }
+  .item{
+    border $rem(1px) solid $grey-background-color
+    border-radius $border-radius-default
+    padding $rem(10px)
+    margin-bottom $rem(10px)
+    .left{
+      background-color transparent
+    }
+  }
+  addFooter()
+  .item-head{
+    padding $rem(5px 0px 10px 0px)
+    border-bottom $rem(1px) solid $grey-background-color
+    display flex
+    justify-content space-between
+    margin-bottom $rem(10px)
+    .left{
+      display flex
+      align-items center
+      //$text-gradient($light-yellow-color,$dark-yellow-color)
+    }
+    .left label{
+      vertical-align middle
+    }
+    .right{
+      text-decoration none
+      color $dark-yellow-color
+    }
+  }
+  .item-body{
+    .collect,.delete{
+      width $rem(76px)
+      height $rem(150px)
+    }
+    .collect{
+      background 
+    }
+    .delete{
+
+    }
+  }
+  .item-footer{
+    padding $rem(5px 0px)
+    color $grey-color
+    setFontSize($font-size-18)
+    text-align right
+    em{
+      setFontSize($font-size-24)
+      font-style normal
+    }
+  }
+  .footer .left{
+    em{
+      font-style normal
+      color $dark-yellow-color
+      setFontSize($font-size-18)
+    }
+    strong{
+      font-weight normal
+      color $dark-yellow-color
+      setFontSize($font-size-36)
+    }
+  }
+  
+}

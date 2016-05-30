@@ -1,0 +1,122 @@
+/*该版风格用到的布局:即用在特定区块用以实现某种排版的样式
+**************************************************/
+p{margin:0;padding:0}
+body{
+  overflow-scrolling touch
+  -webkit-overflow-scrolling touch
+  max-width $rem(740px)
+  min-width $rem(320px)
+  font-size $base-text-font
+  i{
+    font-style normal
+  }
+  .hide{
+    display none
+  }
+  .wrap{
+    width 100%
+    height 100%
+    max-width $rem(740px)
+    margin 0 auto
+    position absolute
+    top 0
+    left @top
+    right @top
+    bottom @top
+    overflow-y scroll
+    overflow-x hidden
+  }
+  .homeSlide {
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    width 100%
+    height $rem(boxheight = 325px)
+    ul {
+      position: absolute
+      width 100%
+      height 100%
+      li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        background url("../image/banner-default.png") no-repeat center top
+        background-size $rem(640px auto);
+      }
+      a {
+        display: block
+      }
+      img {
+        width: 100%;
+        height: $rem(boxheight)
+      }
+    }
+    ol {
+      position: absolute;
+      z-index: 3;
+      right: 0;
+      bottom: $rem(16px);
+      width: 100%;
+      text-align: center;
+      li {
+        display: inline-block;
+        width: $rem(15x);
+        height: $rem(15x);
+        margin-right: $rem(7px);
+        border-radius: 100%;
+        background-color: rgba(160, 160, 160, 1)
+        &.on {
+          background-color: rgba(255, 184, 71, .6)
+        }
+      }
+    }
+  }
+  .detailSlide{
+    height $rem(boxheight = 641px) !important
+    img {
+      width: 100%;
+        height: $rem(boxheight) !important
+    }
+  }
+}
+
+.header{
+  color #e38f03
+  a{
+    color #e38f03
+  }
+}
+
+$header-height = $rem(70px)
+.margin-left-right-default{
+  margin 0 $rem(28px)
+}
+     
+.text-center{
+  text-align center
+}
+.text-left{
+  text-align left
+}
+.text-right{
+  text-align right
+}
+
+//总的布局
+summarize(){
+  lafe-intro-item(90%)
+  display flex
+  flex-direction column
+  height 100%
+  .content{
+    flex 2
+    overflow-y auto
+  } 
+}
