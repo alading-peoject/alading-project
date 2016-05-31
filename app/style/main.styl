@@ -305,7 +305,7 @@ lafe-intro-item(isHaveSelect=100%){
 addFooter(){
   .footer{
     width 100%
-    height $rem(70px)
+    height $rem(100px)
     display flex
     position absolute
     left 0
@@ -412,6 +412,12 @@ addNavigator(){
   }
   .button-frame{
     margin-top $rem(40px)
+    a{
+      font-size $rem(32px)
+      width 25% !important
+      line-height 200% !important
+      display block
+    }
     @extend .text-center
     .button{
       @extend .btn
@@ -479,6 +485,10 @@ addNavigator(){
     margin-bottom $rem(10px)
     .left{
       background-color transparent
+      img{
+        width $rem(24px)
+        height $rem(23px)
+      }
     }
   }
   addFooter()
@@ -516,6 +526,8 @@ addNavigator(){
       font-style normal
       color $dark-yellow-color
       setFontSize($font-size-18)
+      position relative
+      margin-top 2%
     }
     strong{
       font-weight normal
@@ -789,6 +801,7 @@ radioInput()
           background-size $rem(28px 37px) 
         }
         &:nth-child(2){
+          color #c9c9c9
           width 40%
           text-align right
           padding-right 8%
@@ -804,7 +817,7 @@ radioInput()
       justify-content space-around
       flex-wrap wrap
       a{
-        width 28%
+        width 31%
         border $rem(1px) solid $home-line-color
         margin-bottom $rem(20px)
         img{
@@ -818,6 +831,7 @@ radioInput()
           padding-left 5%
           i{
             margin-left 3%
+            font-weight bold
           }
           &:last-child{
             font-size $rem(14px)
@@ -965,6 +979,7 @@ radioInput()
       .sub-item{
         width 30%
         margin-right 2%
+        position relative
         &:last-child{
           margin 0 !important
         }
@@ -981,6 +996,14 @@ radioInput()
           margin $rem(10px 0px)
           text-align center
           setFontSize($font-size-18)
+          position absolute
+          top 25%
+          //height 50%
+          line-height 200%
+          //left $rem(32px)
+          width 100%
+          background rgba(0,0,0,0.3)
+          color #e38f03
         }
       }
     }    
@@ -1175,7 +1198,7 @@ radioInput()
             position: relative;
             z-index: 1;
             height: $rem(38px);
-            width: 80%
+            width: 57% !important
             border: $rem(1px) solid #d6d6d6;
             overflow: hidden;
             float: left;
@@ -1193,7 +1216,7 @@ radioInput()
                 position: absolute;
                 top:0;
                 left: $rem(40px);
-                width: $rem(90px)
+                width: $rem(60px)
                 height: $rem(40px);
                 padding: 0;
                 line-height: $rem(40px);
@@ -1223,9 +1246,11 @@ radioInput()
             display flex
             .items{
               width 25%
+              &:first-child{
+                margin-left $rem(30px)
+              }
               &:last-child{
-                margin-top $rem(15px)
-                width 70%
+                margin $rem(15px 0 0 0)
               }
             }
           }
@@ -1701,7 +1726,6 @@ radioInput()
     }
   }
   .total{
-    margin-bottom $rem(120px) !important
     p{
       display flex
       flex-direction row
@@ -1712,6 +1736,7 @@ radioInput()
         height $rem(30px)
         margin-right $rem(10px)
       }
+      border 0 !important
       span{
         &:first-child{
           font-size $rem(20px)
