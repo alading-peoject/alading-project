@@ -139,6 +139,17 @@ $header-height = $rem(70px)
   margin 0 $rem(28px)
 }
 
+//总的布局
+summarize(length=90%){
+  lafe-intro-item(length)
+  display flex
+  flex-direction column
+  height 100%
+  .content{
+    flex 2
+    overflow-y auto
+  } 
+}
 /*********自定义的可重用界面组件************/
 .text-center{
   text-align center
@@ -222,16 +233,15 @@ radioInput(){
     border-radius: 50%;
   }
   .option-input:checked::before {
-    // width $rem(10px);
-    // height $rem(10px);
-    // border-radius: 50%;
-    // border $rem(1px) solid $grey-color
+    // width $rem(10px)
+    // height $rem(10px)
+    // border-radius $rem(5px)
     // background $dark-yellow-color
-    // position: absolute;
+    // position: absolute
     // left 50%
     // top 50%
-    // margin-left: 0.1%;
-    // margin-top: -0.37rem;
+    // margin-left $rem(-5px)
+    // margin-top $rem(-5px)
     // display: inline-block;
     // content: '';
   }
@@ -1768,7 +1778,7 @@ radioInput()
         height $rem(26px)
         text-align center
         display block
-        padding-top $rem(50px)
+        padding-top $rem(45px)
         font-size $rem(14px)
       }
       &:first-child{
@@ -1867,5 +1877,386 @@ radioInput()
         background-size $rem(31px 30px)
       }
     }
+  }
+}
+
+.buy-card-special{ 
+  summarize()
+  .top{
+    height $rem(57px)
+    border-bottom $rem(1px) solid #dcdcdc
+    display flex
+    padding $rem(0 0 0 20px)
+    .left{
+      flex 2
+      display flex
+      justify-content space-between
+      align-items center
+    }
+    .right{
+      width $rem(57px)
+      height 100%
+      background-color #dcdcdc
+      color $white-color
+      display flex
+      justify-content center
+      align-items center
+    }
+    .sub-left{
+      display flex
+      align-items center
+    }
+    .sub-right{
+      width $rem(57px)
+      height @width
+      background-repeat no-repeat
+      background-image url("../image/buycardspecial/special_03.jpg")
+      background-position left center
+    }
+    .shape{
+      width $rem(36px)
+      height $rem(36px)
+      border-radius $rem(18px)
+      background-color #e8e8e8
+      display inline-block
+      margin-right $rem(10px)
+    }
+    
+  }
+  .content{
+    padding $rem(28px)
+    background-color #ebebeb
+  }
+  lafe-intro-item(100%)
+  .item{
+    border $rem(1px) solid #dedede
+    .send-button{
+      border-radius $rem(20px)
+      padding $rem(0px 20px)
+      $background-gradient($light-yellow-color,$dark-yellow-color)
+      color $white-color
+    }
+    border-radius $rem(5px)
+  }
+  .bottom{
+    background-color $white-color
+    border-top $rem(1px) solid $grey-background-color
+    height $rem(74px)
+    line-height @height
+    display flex
+    align-items center
+    .expression,.more{
+      width $rem(50px)
+      height $rem(50px)
+      display inline-block
+      margin-right $rem(10px)
+      background-repeat no-repeat
+      background-position left top
+    }  
+    .expression{
+      background-image url("../image/buycardspecial/special_07.jpg")
+      margin-left $rem(10px)
+    }
+    .more{
+      background-image url("../image/buycardspecial/special_09.jpg")
+    }
+    .enter-box{
+      flex 2
+      height $rem(42px)
+      line-height @height
+      border $rem(1px) solid $grey-background-color
+      border-radius $rem(5px)
+      margin-right $rem(20px)
+    }
+    .send{
+      display inline-block
+      width $rem(84px)
+      height $rem(42px)
+      line-height @height
+      color $white-color
+      text-align center
+      border-radius 20px
+      $background-gradient($light-yellow-color,$dark-yellow-color)
+    }
+  }
+}
+
+.buy-card-edit{
+  @extend .buy-card
+  .number{
+    display flex
+    label{
+      display inline-block
+      setFontSize(font-size-18)
+    }
+  }
+  .main{
+    display flex
+    flex-direction row
+    justify-content space-around
+    flex-wrap nowrap
+  }
+  .main-top{
+    label{
+      img{
+        width $rem(24px)
+        height $rem(23px)
+      }
+    }
+  }
+  .lafe-intro-item .main .note{
+    margin $rem(5px 0px 8px 10px)
+  }
+  .input-item{
+    .add-button,.delete-button{
+      width $rem(28px)
+      height $rem(28px)
+      line-height @height
+      display inline-block
+      background-color #d6d6d6
+      color #000
+      text-align center
+    }
+    input{
+      width $rem(50px)
+      height $rem(28px)
+      line-height @height
+      text-align center
+      border none
+      background-color $white-color
+      setFontSize($font-size-14)
+    }
+  }
+  .middle{
+    display flex
+    justify-content center
+    align-items center
+    border-right $rem(1px) solid $white-color
+  }
+}
+
+.cart{
+  .status{
+    color #d89334 !important
+  }
+  .order{
+    display: flex;
+    .img-a,.describ{
+      float none !important
+    }
+    .img-a{
+      margin-right 3%
+      margin-left 0 !important
+      img{
+        margin-left 0 !important
+        margin-right 0 !important
+      }
+    }
+    input{
+      position relative
+      margin-top $rem(48px)
+      margin-left 2%
+    }
+  }
+  .bottom{
+    display flex
+    flex-direction row
+    justify-content space-around
+    flex-wrap nowrap
+    span{
+      width 50%
+      &:first-child{
+        color #d89334 !important
+      }
+    }
+  }
+  .total{
+    p{
+      &:first-child{
+        color #999 !important
+        border-top $rem(1px) solid #e8e8e8 
+        border-bottom 0 !important
+        padding-top $rem(10px)
+      }
+    }
+  }
+}
+
+// .cart-amout{
+//   .top{
+//     margin-top $rem(15px)
+//   }
+//   .bottoms{
+//     margin-top $rem(20px)
+//     display flex
+//     flex-direction row
+//     justify-content space-start
+//     flex-wrap nowrap
+//     span{
+//       width 40%
+//     }
+//     .item{
+//       width 60%
+//     }
+//   }
+//   .item{
+//     display flex
+//     flex-direction row
+//     justify-content space-between
+//     flex-wrap nowrap
+//     border 0 !important
+//     margin 0
+//     .items{
+//       margin-top 0 !important
+//     }
+//   }
+//   .property-quantity-control {
+//     position: relative;
+//     z-index: 1;
+//     height: $rem(30px);
+//     width: $rem(150px) !important
+//     border: $rem(1px) solid #d6d6d6;
+//     overflow: hidden;
+//     float: left;
+//     a {
+//         position: absolute;
+//         top:0;
+//         width: $rem(30px);
+//         height: $rem(30px);
+//         line-height: $rem(30px);
+//         font-size: $rem(26px);
+//         text-decoration: none;
+//         text-align: center;
+//     }
+//     input {
+//         position: absolute;
+//         top:-160%;
+//         left: $rem(30px);
+//         width: 60%
+//         height: $rem(30px);
+//         padding: 0;
+//         line-height: $rem(40px);
+//         font-size: $rem(18px);
+//         border: none;
+//         text-align: center;
+//         color: #a0a0a0;
+//     }
+
+//     .vm-minus {
+//         background #d6d6d6
+//         left: 0;
+//         border-right: $rem(1px) solid $border-color-base;
+//     }
+
+//     .vm-plus {
+//         background #d6d6d6
+//         right: 0;
+//         border-left: $rem(1px) solid $border-color-base;
+//     }
+// }
+// }
+
+.bill{
+  summarize()
+  .content{
+    padding $rem(28px)
+    .item{
+      border $rem(1px) solid $grey-background-color
+      border-radius $rem(10px)
+      padding $rem(10px)
+    }
+    .item-header{
+      color #2b2b2b
+      setFontSize($font-size-24)
+      border-bottom $rem(1px) solid $grey-background-color
+      padding-bottom $rem(5px)
+    }
+    .item-body{ 
+      padding $rem(10px 0 0)
+    }
+    .frame{
+      margin-top $rem(10px)
+      .sub-item{
+        label{
+          color #7f7f7f
+          setFontSize($font-size-20)
+        }
+        margin-right $rem(20px)
+      }
+    }
+    .start{
+      margin-top $rem(10px)
+      h2{
+        color #2b2b2b
+        setFontSize($font-size-24)
+      }
+    } 
+    .company-name{
+      margin-top $rem(10px)
+      width 100%
+      height $rem(48px)
+      line-height @height
+      text-indent $rem(20px)
+      setFontSize($font-size-20)
+      background-color #f5f5f5
+      border $rem(1px) solid #d2d2d2
+    }
+    .bill-detail{
+      margin-top $rem(10px)
+      color #2b2b2b
+      setFontSize($font-size-20)
+      margin-bottom $rem(3px)      
+    }
+  }
+  .footer .button{
+    display block
+    $background-gradient($light-yellow-color,$dark-yellow-color)
+    width 100%
+    height $rem(70px)
+    line-height @height
+    text-align center
+    color #fff
+    setFontSize($font-size-30)
+  }
+}
+
+
+.buy-card-edit{
+  @extend .buy-card
+  .number{
+    display flex
+    label{
+      display inline-block
+      setFontSize(font-size-18)
+    }
+  }
+  .lafe-intro-item .main .note{
+    margin $rem(5px 0px 8px 10px)
+  }
+  .input-item{
+    .add-button,.delete-button{
+      width $rem(28px)
+      height $rem(28px)
+      line-height @height
+      display inline-block
+      background-color #d6d6d6
+      color #000
+      text-align center
+    }
+    input{
+      width $rem(50px)
+      height $rem(28px)
+      line-height @height
+      text-align center
+      border none
+      background-color $white-color
+      setFontSize($font-size-14)
+    }
+  }
+  .middle{
+    display flex
+    justify-content center
+    align-items center
+    border-right $rem(1px) solid $white-color
   }
 }

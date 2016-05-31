@@ -820,7 +820,8 @@ body .detailSlide img {
 .my-favorite .list,
 .buy-card .list,
 .search-result .cont,
-.confirm-order .content {
+.confirm-order .content,
+.buy-card-edit .list {
   margin: 0 1.4rem;
 }
 /*********自定义的可重用界面组件************/
@@ -872,8 +873,12 @@ body .detailSlide img {
 .buy-card .lafe-intro-item .main .cont .strong,
 .search-result .lafe-intro-item .main .cont .strong,
 .my-order .lafe-intro-item .main .cont .strong,
+.sort .lafe-intro-item .main .cont .strong,
 .confirm-order .lafe-intro-item .main .cont .strong,
-.my-order-01 .content .shop-list .order .describ .bottom a {
+.my-order-01 .content .shop-list .order .describ .bottom a,
+.buy-card-special .lafe-intro-item .main .cont .strong,
+.buy-card-edit .lafe-intro-item .main .cont .strong,
+.bill .lafe-intro-item .main .cont .strong {
   padding: 0.25rem  1rem;
   color: #e38f03;
   border-radius: 1rem;
@@ -1044,11 +1049,13 @@ body .detailSlide img {
 .my-favorite .item:last-child {
   margin-bottom: 6rem;
 }
-.buy-card .lafe-intro-item {
+.buy-card .lafe-intro-item,
+.buy-card-edit .lafe-intro-item {
   display: flex;
   margin-bottom: 0.4rem;
 }
-.buy-card .lafe-intro-item .left {
+.buy-card .lafe-intro-item .left,
+.buy-card-edit .lafe-intro-item .left {
   width: 10%;
   background: #f5f5f5;
   text-align: center;
@@ -1056,71 +1063,86 @@ body .detailSlide img {
   display: flex;
   align-items: center;
 }
-.buy-card .lafe-intro-item .left input {
+.buy-card .lafe-intro-item .left input,
+.buy-card-edit .lafe-intro-item .left input {
   left: 50%;
   margin-left: -0.6rem;
 }
-.buy-card .lafe-intro-item .main {
+.buy-card .lafe-intro-item .main,
+.buy-card-edit .lafe-intro-item .main {
   width: 90%;
   display: flex;
   background: #f5f5f5;
   padding: 0.5rem;
 }
-.buy-card .lafe-intro-item .main .picture {
+.buy-card .lafe-intro-item .main .picture,
+.buy-card-edit .lafe-intro-item .main .picture {
   width: 24%;
   justify-content: center;
   align-items: center;
   display: flex;
 }
-.buy-card .lafe-intro-item .main .picture img {
+.buy-card .lafe-intro-item .main .picture img,
+.buy-card-edit .lafe-intro-item .main .picture img {
   width: 100%;
 }
-.buy-card .lafe-intro-item .main .note {
+.buy-card .lafe-intro-item .main .note,
+.buy-card-edit .lafe-intro-item .main .note {
   width: 76%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0.5rem 1.25rem;
 }
-.buy-card .lafe-intro-item .main .note h4 {
+.buy-card .lafe-intro-item .main .note h4,
+.buy-card-edit .lafe-intro-item .main .note h4 {
   margin: 0rem;
   color: #303030;
   font-size: 1rem;
 }
-.buy-card .lafe-intro-item .main .cont {
+.buy-card .lafe-intro-item .main .cont,
+.buy-card-edit .lafe-intro-item .main .cont {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.buy-card .lafe-intro-item .main .cont em {
+.buy-card .lafe-intro-item .main .cont em,
+.buy-card-edit .lafe-intro-item .main .cont em {
   color: #e38f03;
   font-size: 1.2rem;
   font-style: normal;
 }
-.buy-card .lafe-intro-item .main .cont .strong {
+.buy-card .lafe-intro-item .main .cont .strong,
+.buy-card-edit .lafe-intro-item .main .cont .strong {
   font-size: 1.2rem;
   font-weight: normal;
 }
-.buy-card .lafe-intro-item .main .cont strong {
+.buy-card .lafe-intro-item .main .cont strong,
+.buy-card-edit .lafe-intro-item .main .cont strong {
   font-weight: normal;
 }
-.buy-card .list {
+.buy-card .list,
+.buy-card-edit .list {
   margin-top: 1.5rem;
 }
-.buy-card .item {
+.buy-card .item,
+.buy-card-edit .item {
   border: 0.05rem  solid #f5f5f5;
   border-radius: 0.25rem;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.buy-card .item .left {
+.buy-card .item .left,
+.buy-card-edit .item .left {
   background-color: transparent;
 }
-.buy-card .item .left img {
+.buy-card .item .left img,
+.buy-card-edit .item .left img {
   width: 1.2rem;
   height: 1.15rem;
 }
-.buy-card .footer {
+.buy-card .footer,
+.buy-card-edit .footer {
   width: 100%;
   height: 5rem;
   display: flex;
@@ -1129,19 +1151,22 @@ body .detailSlide img {
   bottom: 0;
   z-index: 999999;
 }
-.buy-card .footer .left {
+.buy-card .footer .left,
+.buy-card-edit .footer .left {
   padding: 1.5rem;
   width: 64%;
   display: flex;
   align-items: center;
   background: #f5f5f5;
 }
-.buy-card .footer .left label {
+.buy-card .footer .left label,
+.buy-card-edit .footer .left label {
   margin-left: 20px;
   font-size: 1rem;
   color: #7f7f7f;
 }
-.buy-card .footer .right {
+.buy-card .footer .right,
+.buy-card-edit .footer .right {
   width: 36%;
   border-right: 0.05rem  solid #fad398;
   background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fdb752), to(#e38f03));
@@ -1153,45 +1178,54 @@ body .detailSlide img {
   align-items: center;
   display: flex;
 }
-.buy-card .footer .right:last-child {
+.buy-card .footer .right:last-child,
+.buy-card-edit .footer .right:last-child {
   border: 0;
 }
-.buy-card .item-head {
+.buy-card .item-head,
+.buy-card-edit .item-head {
   padding: 0.25rem 0rem 0.5rem 0rem;
   border-bottom: 0.05rem  solid #f5f5f5;
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
-.buy-card .item-head .left {
+.buy-card .item-head .left,
+.buy-card-edit .item-head .left {
   display: flex;
   align-items: center;
 }
-.buy-card .item-head .left label {
+.buy-card .item-head .left label,
+.buy-card-edit .item-head .left label {
   vertical-align: middle;
 }
-.buy-card .item-head .right {
+.buy-card .item-head .right,
+.buy-card-edit .item-head .right {
   text-decoration: none;
   color: #e38f03;
 }
-.buy-card .item-footer {
+.buy-card .item-footer,
+.buy-card-edit .item-footer {
   padding: 0.25rem 0rem;
   color: #7f7f7f;
   font-size: 0.9rem;
   text-align: right;
 }
-.buy-card .item-footer em {
+.buy-card .item-footer em,
+.buy-card-edit .item-footer em {
   font-size: 1.2rem;
   font-style: normal;
 }
-.buy-card .footer .left em {
+.buy-card .footer .left em,
+.buy-card-edit .footer .left em {
   font-style: normal;
   color: #e38f03;
   font-size: 0.9rem;
   position: relative;
   margin-top: 2%;
 }
-.buy-card .footer .left strong {
+.buy-card .footer .left strong,
+.buy-card-edit .footer .left strong {
   font-weight: normal;
   color: #e38f03;
   font-size: 1.8rem;
@@ -1706,9 +1740,76 @@ body .detailSlide img {
   top: 0rem;
   height: 100%;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .sort .item:last-child {
   margin-bottom: 6rem  !important;
+}
+.sort .lafe-intro-item {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+.sort .lafe-intro-item .left {
+  width: 10%;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 5.2rem;
+  display: flex;
+  align-items: center;
+}
+.sort .lafe-intro-item .left input {
+  left: 50%;
+  margin-left: -0.6rem;
+}
+.sort .lafe-intro-item .main {
+  width: 90%;
+  display: flex;
+  background: #f5f5f5;
+  padding: 0.5rem;
+}
+.sort .lafe-intro-item .main .picture {
+  width: 24%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.sort .lafe-intro-item .main .picture img {
+  width: 100%;
+}
+.sort .lafe-intro-item .main .note {
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem 1.25rem;
+}
+.sort .lafe-intro-item .main .note h4 {
+  margin: 0rem;
+  color: #303030;
+  font-size: 1rem;
+}
+.sort .lafe-intro-item .main .cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sort .lafe-intro-item .main .cont em {
+  color: #e38f03;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+.sort .lafe-intro-item .main .cont .strong {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.sort .lafe-intro-item .main .cont strong {
+  font-weight: normal;
+}
+.sort .content {
+  flex: 2;
+  overflow-y: auto;
 }
 .sort .search-box {
   height: 2.1rem;
@@ -1842,6 +1943,9 @@ body .detailSlide img {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .confirm-order .lafe-intro-item {
   display: flex;
@@ -1902,6 +2006,70 @@ body .detailSlide img {
 }
 .confirm-order .lafe-intro-item .main .cont strong {
   font-weight: normal;
+}
+.confirm-order .lafe-intro-item {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+.confirm-order .lafe-intro-item .left {
+  width: 10%;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 5.2rem;
+  display: flex;
+  align-items: center;
+}
+.confirm-order .lafe-intro-item .left input {
+  left: 50%;
+  margin-left: -0.6rem;
+}
+.confirm-order .lafe-intro-item .main {
+  width: 90%;
+  display: flex;
+  background: #f5f5f5;
+  padding: 0.5rem;
+}
+.confirm-order .lafe-intro-item .main .picture {
+  width: 24%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.confirm-order .lafe-intro-item .main .picture img {
+  width: 100%;
+}
+.confirm-order .lafe-intro-item .main .note {
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem 1.25rem;
+}
+.confirm-order .lafe-intro-item .main .note h4 {
+  margin: 0rem;
+  color: #303030;
+  font-size: 1rem;
+}
+.confirm-order .lafe-intro-item .main .cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.confirm-order .lafe-intro-item .main .cont em {
+  color: #e38f03;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+.confirm-order .lafe-intro-item .main .cont .strong {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.confirm-order .lafe-intro-item .main .cont strong {
+  font-weight: normal;
+}
+.confirm-order .content {
+  flex: 2;
+  overflow-y: auto;
 }
 .confirm-order .content {
   padding-top: 1.5rem;
@@ -2691,7 +2859,7 @@ body .detailSlide img {
   height: 1.3rem;
   text-align: center;
   display: block;
-  padding-top: 2.5rem;
+  padding-top: 2.25rem;
   font-size: 0.7rem;
 }
 .total-nav ul li:first-child a {
@@ -2770,4 +2938,479 @@ body .detailSlide img {
 .detai-foot .left .item:nth-child(3) {
   background: url("../image/common/cart.png") no-repeat center 0.25rem;
   background-size: 1.55rem 1.5rem;
+}
+.buy-card-special {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.buy-card-special .lafe-intro-item {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+.buy-card-special .lafe-intro-item .left {
+  width: 10%;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 5.2rem;
+  display: flex;
+  align-items: center;
+}
+.buy-card-special .lafe-intro-item .left input {
+  left: 50%;
+  margin-left: -0.6rem;
+}
+.buy-card-special .lafe-intro-item .main {
+  width: 90%;
+  display: flex;
+  background: #f5f5f5;
+  padding: 0.5rem;
+}
+.buy-card-special .lafe-intro-item .main .picture {
+  width: 24%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.buy-card-special .lafe-intro-item .main .picture img {
+  width: 100%;
+}
+.buy-card-special .lafe-intro-item .main .note {
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem 1.25rem;
+}
+.buy-card-special .lafe-intro-item .main .note h4 {
+  margin: 0rem;
+  color: #303030;
+  font-size: 1rem;
+}
+.buy-card-special .lafe-intro-item .main .cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy-card-special .lafe-intro-item .main .cont em {
+  color: #e38f03;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+.buy-card-special .lafe-intro-item .main .cont .strong {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.buy-card-special .lafe-intro-item .main .cont strong {
+  font-weight: normal;
+}
+.buy-card-special .content {
+  flex: 2;
+  overflow-y: auto;
+}
+.buy-card-special .top {
+  height: 2.85rem;
+  border-bottom: 0.05rem  solid #dcdcdc;
+  display: flex;
+  padding: 0rem 0rem 0rem 1rem;
+}
+.buy-card-special .top .left {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy-card-special .top .right {
+  width: 2.85rem;
+  height: 100%;
+  background-color: #dcdcdc;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buy-card-special .top .sub-left {
+  display: flex;
+  align-items: center;
+}
+.buy-card-special .top .sub-right {
+  width: 2.85rem;
+  height: 2.85rem;
+  background-repeat: no-repeat;
+  background-image: url("../image/buycardspecial/special_03.jpg");
+  background-position: left center;
+}
+.buy-card-special .top .shape {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.9rem;
+  background-color: #e8e8e8;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.buy-card-special .content {
+  padding: 1.4rem;
+  background-color: #ebebeb;
+}
+.buy-card-special .lafe-intro-item {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+.buy-card-special .lafe-intro-item .left {
+  width: 10%;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 5.2rem;
+  display: flex;
+  align-items: center;
+}
+.buy-card-special .lafe-intro-item .left input {
+  left: 50%;
+  margin-left: -0.6rem;
+}
+.buy-card-special .lafe-intro-item .main {
+  width: 100%;
+  display: flex;
+  background: #f5f5f5;
+  padding: 0.5rem;
+}
+.buy-card-special .lafe-intro-item .main .picture {
+  width: 24%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.buy-card-special .lafe-intro-item .main .picture img {
+  width: 100%;
+}
+.buy-card-special .lafe-intro-item .main .note {
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem 1.25rem;
+}
+.buy-card-special .lafe-intro-item .main .note h4 {
+  margin: 0rem;
+  color: #303030;
+  font-size: 1rem;
+}
+.buy-card-special .lafe-intro-item .main .cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy-card-special .lafe-intro-item .main .cont em {
+  color: #e38f03;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+.buy-card-special .lafe-intro-item .main .cont .strong {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.buy-card-special .lafe-intro-item .main .cont strong {
+  font-weight: normal;
+}
+.buy-card-special .item {
+  border: 0.05rem  solid #dedede;
+  border-radius: 0.25rem;
+}
+.buy-card-special .item .send-button {
+  border-radius: 1rem;
+  padding: 0rem 1rem;
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fdb752), to(#e38f03));
+  color: #fff;
+}
+.buy-card-special .bottom {
+  background-color: #fff;
+  border-top: 0.05rem  solid #f5f5f5;
+  height: 3.7rem;
+  line-height: 3.7rem;
+  display: flex;
+  align-items: center;
+}
+.buy-card-special .bottom .expression,
+.buy-card-special .bottom .more {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.buy-card-special .bottom .expression {
+  background-image: url("../image/buycardspecial/special_07.jpg");
+  margin-left: 0.5rem;
+}
+.buy-card-special .bottom .more {
+  background-image: url("../image/buycardspecial/special_09.jpg");
+}
+.buy-card-special .bottom .enter-box {
+  flex: 2;
+  height: 2.1rem;
+  line-height: 2.1rem;
+  border: 0.05rem  solid #f5f5f5;
+  border-radius: 0.25rem;
+  margin-right: 1rem;
+}
+.buy-card-special .bottom .send {
+  display: inline-block;
+  width: 4.2rem;
+  height: 2.1rem;
+  line-height: 2.1rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fdb752), to(#e38f03));
+}
+.buy-card-edit .number {
+  display: flex;
+}
+.buy-card-edit .number label {
+  display: inline-block;
+  font-size: font-size-18;
+}
+.buy-card-edit .main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+.buy-card-edit .main-top label img {
+  width: 1.2rem;
+  height: 1.15rem;
+}
+.buy-card-edit .lafe-intro-item .main .note {
+  margin: 0.25rem 0rem 0.4rem 0.5rem;
+}
+.buy-card-edit .input-item .add-button,
+.buy-card-edit .input-item .delete-button {
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  display: inline-block;
+  background-color: #d6d6d6;
+  color: #000;
+  text-align: center;
+}
+.buy-card-edit .input-item input {
+  width: 2.5rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  border: none;
+  background-color: #fff;
+  font-size: $font-size-14;
+}
+.buy-card-edit .middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.05rem  solid #fff;
+}
+.cart .status {
+  color: #d89334 !important;
+}
+.cart .order {
+  display: flex;
+}
+.cart .order .img-a,
+.cart .order .describ {
+  float: none !important;
+}
+.cart .order .img-a {
+  margin-right: 3%;
+  margin-left: 0 !important;
+}
+.cart .order .img-a img {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.cart .order input {
+  position: relative;
+  margin-top: 2.4rem;
+  margin-left: 2%;
+}
+.cart .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+.cart .bottom span {
+  width: 50%;
+}
+.cart .bottom span:first-child {
+  color: #d89334 !important;
+}
+.cart .total p:first-child {
+  color: #999 !important;
+  border-top: 0.05rem  solid #e8e8e8;
+  border-bottom: 0 !important;
+  padding-top: 0.5rem;
+}
+.bill {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.bill .lafe-intro-item {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+.bill .lafe-intro-item .left {
+  width: 10%;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 5.2rem;
+  display: flex;
+  align-items: center;
+}
+.bill .lafe-intro-item .left input {
+  left: 50%;
+  margin-left: -0.6rem;
+}
+.bill .lafe-intro-item .main {
+  width: 90%;
+  display: flex;
+  background: #f5f5f5;
+  padding: 0.5rem;
+}
+.bill .lafe-intro-item .main .picture {
+  width: 24%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.bill .lafe-intro-item .main .picture img {
+  width: 100%;
+}
+.bill .lafe-intro-item .main .note {
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem 1.25rem;
+}
+.bill .lafe-intro-item .main .note h4 {
+  margin: 0rem;
+  color: #303030;
+  font-size: 1rem;
+}
+.bill .lafe-intro-item .main .cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bill .lafe-intro-item .main .cont em {
+  color: #e38f03;
+  font-size: 1.2rem;
+  font-style: normal;
+}
+.bill .lafe-intro-item .main .cont .strong {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.bill .lafe-intro-item .main .cont strong {
+  font-weight: normal;
+}
+.bill .content {
+  flex: 2;
+  overflow-y: auto;
+}
+.bill .content {
+  padding: 1.4rem;
+}
+.bill .content .item {
+  border: 0.05rem  solid #f5f5f5;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.bill .content .item-header {
+  color: #2b2b2b;
+  font-size: 1.2rem;
+  border-bottom: 0.05rem  solid #f5f5f5;
+  padding-bottom: 0.25rem;
+}
+.bill .content .item-body {
+  padding: 0.5rem 0rem 0rem;
+}
+.bill .content .frame {
+  margin-top: 0.5rem;
+}
+.bill .content .frame .sub-item {
+  margin-right: 1rem;
+}
+.bill .content .frame .sub-item label {
+  color: #7f7f7f;
+  font-size: 1rem;
+}
+.bill .content .start {
+  margin-top: 0.5rem;
+}
+.bill .content .start h2 {
+  color: #2b2b2b;
+  font-size: 1.2rem;
+}
+.bill .content .company-name {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-indent: 1rem;
+  font-size: 1rem;
+  background-color: #f5f5f5;
+  border: 0.05rem  solid #d2d2d2;
+}
+.bill .content .bill-detail {
+  margin-top: 0.5rem;
+  color: #2b2b2b;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+.bill .footer .button {
+  display: block;
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fdb752), to(#e38f03));
+  width: 100%;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.buy-card-edit .number {
+  display: flex;
+}
+.buy-card-edit .number label {
+  display: inline-block;
+  font-size: font-size-18;
+}
+.buy-card-edit .lafe-intro-item .main .note {
+  margin: 0.25rem 0rem 0.4rem 0.5rem;
+}
+.buy-card-edit .input-item .add-button,
+.buy-card-edit .input-item .delete-button {
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  display: inline-block;
+  background-color: #d6d6d6;
+  color: #000;
+  text-align: center;
+}
+.buy-card-edit .input-item input {
+  width: 2.5rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  border: none;
+  background-color: #fff;
+  font-size: $font-size-14;
+}
+.buy-card-edit .middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.05rem  solid #fff;
 }
