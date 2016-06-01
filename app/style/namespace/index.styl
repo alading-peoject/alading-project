@@ -1,12 +1,8 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
+@import '../common/variable'
+@import '../common/commponent'
 
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
 
 .index{
   .nav-bar{
@@ -105,6 +101,7 @@
           background-size $rem(28px 37px) 
         }
         &:nth-child(2){
+          color #c9c9c9
           width 40%
           text-align right
           padding-right 8%
@@ -120,7 +117,7 @@
       justify-content space-around
       flex-wrap wrap
       a{
-        width 28%
+        width 31%
         border $rem(1px) solid $home-line-color
         margin-bottom $rem(20px)
         img{
@@ -134,6 +131,7 @@
           padding-left 5%
           i{
             margin-left 3%
+            font-weight bold
           }
           &:last-child{
             font-size $rem(14px)

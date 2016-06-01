@@ -1,16 +1,11 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
-
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
+@import '../common/variable'
+@import '../common/commponent'
 
 .service-apply{
   font-size $rem(18px)
-  .amout{
+  .amout{ 
     color $common-text-color
     margin-top $rem(15px)
     select{
@@ -78,7 +73,7 @@
     line-height $rem(36px)
   }
   .service-submit{
-    @extend .liner-background-color
+    setLinerBackgroundColor()
     position absolute
     width 100%
     height $rem(60px)

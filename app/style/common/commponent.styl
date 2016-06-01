@@ -1,45 +1,49 @@
-/*********自定义的可重用界面组件************/
-.text-center{
-  text-align center
+/*********根据业务抽象出来的可重用界面组件************/
+
+//用于实现头、尾、内容或头、内容形式的弹性布局
+summarize(length=90%){
+  lafe-intro-item(length)
+  display flex
+  flex-direction column
+  height 100%
+  .content{
+    flex 2
+    overflow-y auto
+  } 
+}
+setLinerBackgroundColor(){  
+  //渐变背景色
+  display inline-block
+  background -webkit-linear-gradient(0,#c77d20,#fdb752)
+  background linear-gradient(0, #c77d20,#fdb752)
+  color $whit-text-color
+  font-size $rem(30px)
+  height $rem(70px)
+  line-height @height
+}
+//水平垂直居中
+setPublicCenterCompletely(){
+  position absolute
+  left 50%
+  top 50%
+  -webkit-transform translate(-50%, -50%)
+  transform translate(-50%, -50%)
 }
 
-.header{
-  height $header-height
-  line-height $header-height
-  background-color $black-background-color
-  border-top $brown-border
-  position relative
-  h1{
-    @extend .text-center
-    margin 0
-    setFontSize($font-size-30)
-    //$text-gradient($light-yellow-color,$dark-yellow-color)
-  }
-  .button{
-    //$text-gradient($light-yellow-color,$dark-yellow-color)
-    setFontSize($font-size-24)
-    position absolute
-    right $rem(20px)
-    top $rem(0px)
-  }
+//用于设置字体大小
+setFontSize(size){
+  font-size size
 }
 
-.flag-success{
-  width $rem(170px)
-  height $rem(170px)
-  background no-repeat 0 0
-  background-image $image-correct
-  background-size contain
-}
-
-.btn{
+addButton(){
   padding $rem(10px) $rem(20px)
   color $white-color
   border-radius $border-radius-default
   display inline-block
   $background-gradient($light-yellow-color,$dark-yellow-color)
 }
-.btn-width-radius{
+
+addBtnWidthRadius(){
   padding $rem(5px) $rem(20px)
   color $dark-yellow-color
   border-radius $border-radius-big
@@ -48,51 +52,7 @@
   //$text-gradient($light-yellow-color,$dark-yellow-color)
 }
 
-setFontSize(size){
-  font-size size
-}
-
-radioInput(){
-  .option-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    width: $rem(20px);
-    height: $rem(20px);
-    display: inline-block;
-    margin-right: 0.5rem;
-    outline: none;
-    background: #fff;
-    border: $rem(1px) solid #eee;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    top :0 
-    z-index: 1000;
-  }
-  .option-input.radio {
-    border-radius: 50%;
-  }
-  .option-input.radio::after {
-    border-radius: 50%;
-  }
-  .option-input:checked::before {
-    // width $rem(10px);
-    // height $rem(10px);
-    // border-radius: 50%;
-    // border $rem(1px) solid $grey-color
-    // background $dark-yellow-color
-    // position: absolute;
-    // left 50%
-    // top 50%
-    // margin-left: 0.1%;
-    // margin-top: -0.37rem;
-    // display: inline-block;
-    // content: '';
-  }
-}
+//用于设置拉菲酒一项
 lafe-intro-item(isHaveSelect=100%){
   .lafe-intro-item{
     display flex
@@ -104,10 +64,7 @@ lafe-intro-item(isHaveSelect=100%){
       line-height $rem(104px)
       display flex
       align-items center
-    }
-    .left input{
-      left 50%
-      margin-left $rem(-12px)
+      justify-content center
     }
     
     .main{
@@ -129,7 +86,7 @@ lafe-intro-item(isHaveSelect=100%){
         display flex
         flex-direction column
         justify-content space-between
-        margin $rem(10px 25px)
+        margin $rem(10px 15px)
       }
       .note h4{
         margin $rem(0)
@@ -148,7 +105,7 @@ lafe-intro-item(isHaveSelect=100%){
         font-style normal
       }
       .cont .strong{
-        @extend .btn-width-radius
+        addBtnWidthRadius()
         setFontSize($font-size-24)
         font-weight normal
       }
@@ -159,14 +116,19 @@ lafe-intro-item(isHaveSelect=100%){
   }
 }
 
+setContentMargin(){
+  margin 0 $rem(28px)
+}
+//用于添加带按钮的页尾
 addFooter(){
   .footer{
     width 100%
-    height $rem(70px)
+    height $rem(100px)
     display flex
     position absolute
     left 0
     bottom 0
+    z-index 999999
     .left{
       padding $rem(30px)
       width 64%
@@ -181,6 +143,7 @@ addFooter(){
     }
     .right{
       width 36%
+      border-right $rem(1px) solid #fad398
       $background-gradient($light-yellow-color,$dark-yellow-color)
       text-decoration none
       color $white-color
@@ -189,9 +152,14 @@ addFooter(){
       justify-content center
       align-items center
       display flex
+      &:last-child{
+        border 0
+      }
     }
   }
 }
+
+//用于添加搜索框
 addSearchBox(){
   .search-box{
     height $rem(42px)
@@ -216,6 +184,7 @@ addSearchBox(){
     }
   }
 }
+//用于添加导航
 addNavigator(){
   .navigator{
     display flex
@@ -235,43 +204,45 @@ addNavigator(){
     }
   }
 }
-.logo-search-bar{
-    position absolute
+
+addBottomNavigator(){
+  .navigator{
+    display flex
+    border-top $rem(1px) solid $grey-background-color
     width 100%
-    background rgba(0,0,0,.6)
-    z-index 999
-    .logo{
-      display inline-block
-      padding $rem(25px 20px)
-      img{
-        width $rem(160px)
-        height $rem(36px)
+    height 100%
+    li{
+      flex 1
+      text-align center
+      //$text-gradient($light-yellow-color,$dark-yellow-color)
+      setFontSize($font-size-20)
+      border-right $rem(1px) solid $grey-background-color
+      display flex
+      flex-direction column 
+      em,strong{
+        display block
+        align-items center
+        justify-content center
+        display flex 
+      }
+      em{
+        flex 2
+        color #f4ac3a
+        setFontSize($font-size-30)
+        align-items center
+      }
+      strong{
+        flex 1
+        color #6b6b6b
+        font-weight normal
+        align-items flex-start
       }
     }
-    .search{
-      display inline-block
-      input{
-        position absolute
-        right $rem(20px)
-        -webkit-transform translateY(-67%)
-        transform translateY(-67%)
-        outline none
-        border 0
-        background rgba(225,225,225,0.2) url('../image/index/index-serch.png') no-repeat 5% center
-        width 40%
-        height 55%
-        line-height @height
-        border-radius $rem(25px)
-        padding 0 10%
-        background-size $rem(30px 30px)
-        font-size $rem(24px)
-        color #fff
-      }
-      input::-webkit-input-placeholder {
-        color: #b5b5b5;
-      }
-      input::input-placeholder {
-        color: #b5b5b5;
+    .active{
+      background-color #f4ac3a
+      em,strong{
+        color $white-color
       }
     }
+  }
 }

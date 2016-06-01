@@ -1,26 +1,26 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
+@import '../common/variable'
+@import '../common/commponent'
 
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
+@import '../common/typography'
 
-.address-pick{
+.address-pick{ 
   .note{
     width 100% !important
     margin-left 2% !important
   }
-  .left,.main{
-    background none !important
-  }
-  .left{
-    input{
-      margin-left 3% !important
+  .content{
+    .left,.main{
+      background none !important
+    }
+    .left{
+      input{
+        margin-left 3% !important
+      }
     }
   }
+  
   .main{
     display block !important
   }
@@ -49,6 +49,6 @@
   }
   .delete{
     color #fff
-    @extend .public-center-completely
+    setPublicCenterCompletely()
   }
 }

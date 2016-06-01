@@ -1,12 +1,7 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
-
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
+@import '../common/variable'
+@import '../common/commponent'
 
 .confirm-order{
   width 100%
@@ -15,8 +10,8 @@
   overflow-y scroll
   lafe-intro-item(100%)
   summarize()
-  .content{
-    @extend .margin-left-right-default
+  .content{   
+    setContentMargin()
     padding-top $rem(30px)
   }
   .item{
@@ -100,7 +95,7 @@
     width 70%
     height 45%
     color #000
-    @extend .public-center-completely
+    setPublicCenterCompletely()
     border-radius $border-radius-big
     text-align center
     .title{
@@ -156,7 +151,7 @@
         display block
         color #fff
         font-size $rem(32px)
-        @extend .public-center-completely
+        setPublicCenterCompletely()
       }
     }
   }

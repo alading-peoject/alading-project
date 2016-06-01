@@ -1,21 +1,16 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
-
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
-
+@import '../common/variable'
+@import '../common/commponent'
 
 .my-order{
+  summarize()
   addNavigator()
   lafe-intro-item(100%)
   .cont{
     margin-top $rem(20px)
     position relative
-    //@extend .margin-left-right-default
+    //setContentMargin()
     strong{
       position absolute
       right 40%
@@ -48,13 +43,13 @@
     
     .order-no,.time,right{
       display block
-      etFontSize($font-size-20)
+      setFontSize($font-size-20)
       font-weight normal
     }
   }
   .item-body{
     margin-top 3%
-    //@extend .margin-left-right-default
+    //setContentMargin()
       .main{
         padding $rem(15px 20px)
         margin $rem(0 20px)
@@ -62,5 +57,9 @@
       .note{
         margin-right 0 !important
       }
+  }
+  .footer{
+    height $rem(88px)
+    addBottomNavigator()
   }
 }

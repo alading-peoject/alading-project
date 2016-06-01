@@ -1,18 +1,17 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
+@import '../common/variable'
+@import '../common/commponent'
 
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
+@import '../common/typography'
 
-.buy-card{
-  summarize()
-  .list{
+.buy-card{   
+  lafe-intro-item(90%)
+  addFooter()
+  
+  .list{ 
     margin-top $rem(30px)
-    @extend .margin-left-right-default
+    setContentMargin()
   }
   .item{
     border $rem(1px) solid $grey-background-color
@@ -21,9 +20,17 @@
     margin-bottom $rem(10px)
     .left{
       background-color transparent
+      img{
+        width $rem(24px)
+        height $rem(23px)
+      }
     }
   }
-  addFooter()
+  .main{
+    flex 2
+    display flex
+    justify-content space-between
+  }
   .item-head{
     padding $rem(5px 0px 10px 0px)
     border-bottom $rem(1px) solid $grey-background-color
@@ -31,8 +38,10 @@
     justify-content space-between
     margin-bottom $rem(10px)
     .left{
+      width 10%
       display flex
       align-items center
+      justify-content center
       //$text-gradient($light-yellow-color,$dark-yellow-color)
     }
     .left label{
@@ -41,18 +50,6 @@
     .right{
       text-decoration none
       color $dark-yellow-color
-    }
-  }
-  .item-body{
-    .collect,.delete{
-      width $rem(76px)
-      height $rem(150px)
-    }
-    .collect{
-      background 
-    }
-    .delete{
-
     }
   }
   .item-footer{
@@ -65,11 +62,41 @@
       font-style normal
     }
   }
+  
+  .item-body{
+    position relative
+  }
+  .slide{
+    width $rem(150px)
+    height $rem(154px)
+    position absolute
+    right $rem(20px)
+    top 0
+    display flex
+    .collect,.delete{
+      flex 1
+      setFontSize($font-size-20)
+      display flex
+      align-items center
+      justify-content center
+      flex-direction column
+      color $white-color
+      writing-mode tb-rl
+    }
+    .collect{
+      background #c5c5c5
+    }
+    .delete{
+      background-color #ff3a52
+    }     
+  }
   .footer .left{
     em{
       font-style normal
       color $dark-yellow-color
       setFontSize($font-size-18)
+      position relative
+      margin-top 2%
     }
     strong{
       font-weight normal
@@ -77,5 +104,4 @@
       setFontSize($font-size-36)
     }
   }
-  
 }

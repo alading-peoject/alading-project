@@ -1,12 +1,7 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
-
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
+@import '../common/variable'
+@import '../common/commponent'
 
 .buy-result{  
   .success{
@@ -30,11 +25,17 @@
       setFontSize($font-size-24)
     }
   }
-  .button-frame{
+  .button-frame{ 
     margin-top $rem(40px)
-    @extend .text-center
+    a{ 
+      font-size $rem(32px)
+      width 25% !important
+      line-height 200% !important
+      display block
+    }
+    text-center center
     .button{
-      @extend .btn
+      addButton()
       text-decoration none
     }
     .back{

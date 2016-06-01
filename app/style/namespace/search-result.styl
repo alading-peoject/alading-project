@@ -1,12 +1,7 @@
-@import '../qst/all.styl'
-@import '../config.styl'
+@import '../qst/all'
 
-
-/* 公用文件导入
-******************************************/
-@import '../variable.styl'
-@import '../common/typography.styl'
-@import '../common/component.styl'
+@import '../common/variable'
+@import '../common/commponent'
 
 .search-result{
   .header{
@@ -26,7 +21,7 @@
   addNavigator()
   .cont{
     margin-top $rem(20px)
-    @extend .margin-left-right-default
+    setContentMargin()
     .note{
       margin $rem(20px 0 20px 20px) !important
     }
