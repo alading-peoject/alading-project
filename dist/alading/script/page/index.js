@@ -1,1 +1,48 @@
-define("alading:app/script/page/index",function(e){{var t=(e("alading:app/script/jquery"),e("slider.js"));new t({dom:document.getElementById("slide"),data:imgList,isAutoplay:!0,isLooping:!0,isAutoScale:!0,isVertical:!1,isDestroyCon:!1,type:"pic",animateType:"default",duration:5e3,onSlideChange:function(e){for(var t=document.querySelectorAll("#slide ol li"),l=t.length,n=0;l>n;n++)t[n].classList.remove("on");t[e].classList.add("on")},onSlideInto:function(){var e=imgList.length,t=document.getElementById("slide"),l=null,n=null;if(e>1){l=document.createElement("ol"),t.appendChild(l);for(var i=0;e>i;i++)n=document.createElement("li"),n.appendChild(document.createTextNode(i)),l.appendChild(n);l.querySelectorAll("li")[0].classList.add("on")}},onDestroy:function(){document.querySelector("#slide ol")&&document.querySelector("#slide ol").remove()}})}});
+define('alading:app/script/page/index', function(require, exports, module) {
+
+  var $ = require('alading:app/script/jquery'),
+      Slider = require('slider.js');
+  
+  var slide = new Slider({
+      dom: document.getElementById('slide'),
+      data: imgList,
+      isAutoplay: true,
+      isLooping: true,
+      isAutoScale: true,
+      isVertical: false,
+      isDestroyCon: false,
+      type: 'pic',
+      animateType: 'default',
+      duration: 5000,
+      onSlideChange: function (page) {
+          var liList = document.querySelectorAll('#slide ol li'),
+              liLength = liList.length;
+          for (var i = 0; i < liLength; i++) {
+              liList[i].classList.remove('on');
+          }
+          liList[page].classList.add('on');
+      },
+      onSlideInto: function () {
+          var imgLength = imgList.length,
+              slideBox = document.getElementById('slide'),
+              noneOl = null,
+              nodeLi = null;
+          if (imgLength > 1) {
+              noneOl = document.createElement("ol");
+              slideBox.appendChild(noneOl);
+              for (var i = 0; i < imgLength; i++) {
+                  nodeLi = document.createElement("li");
+                  nodeLi.appendChild(document.createTextNode(i));
+                  noneOl.appendChild(nodeLi);
+              }
+              noneOl.querySelectorAll('li')[0].classList.add('on');
+          }
+      },
+      onDestroy: function () {
+          if (document.querySelector('#slide ol')) {
+              document.querySelector('#slide ol').remove();
+          }
+      }
+  });
+
+});

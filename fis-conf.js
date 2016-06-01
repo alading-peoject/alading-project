@@ -51,11 +51,11 @@ fis.media('dist')
         optimizer: fis.plugin('png-compressor')
     })
 
-    .match('/app/(script/**.*)', {
-        isMod:true,
-        optimizer: fis.plugin('uglify-js'),
-        release: '${namespace}/$1'
-    })
+    // .match('/app/(script/**.*)', {
+    //     isMod:true,
+    //     optimizer: fis.plugin('uglify-js'),
+    //     release: '${namespace}/$1'
+    // })
     
     .match('/app/(**.css)', {
         optimizer: fis.plugin('clean-css', {
